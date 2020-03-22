@@ -65,6 +65,8 @@ async def get_csrf_token(request):
 
 
 async def validate_csrf_token(request, csrf_token=None):
+    if request.method not in CSRF_METHODS:
+        return
     if csrf_token is None:
         csrf_token = await get_csrf_token(request)
 
