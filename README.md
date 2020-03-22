@@ -23,8 +23,7 @@ async def index(request):
 
 ``` python
 async def handler(request):
-	if request.method == 'POST':
-		await validate_csrf_token(request)
+	await validate_csrf_token(request)
 ```
 
 or
